@@ -21,7 +21,7 @@ sync_dirs() {
   mkdir -p "$destination"
 
   # Use rsync to synchronize files and directories
-  rsync -av --delete "$source/" "$destination/"
+  rsync -av --delete --exclude 'themes/' --exclude 'plugins/' "$source/" "$destination/"
 
   echo "Directory synchronization complete."
 }

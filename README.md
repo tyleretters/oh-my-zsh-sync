@@ -7,3 +7,7 @@ Usage: ./sync.sh <direction>
     up   : Sync custom files to ~/projects/oh-my-zsh-sync/custom and .zshrc to ~/projects/zshrc/.zshrc
     help : Display this help message
 ```
+
+## dependencies
+
+- [nodenv](https://github.com/nodenv/nodenv) `brew install nodenv`
