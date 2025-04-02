@@ -2,47 +2,33 @@
 
 # Script to sync oh-my-zsh custom files and .zshrc in either direction.
 
-# Source directories
+# custom
 OMZ_CUSTOM="$HOME/.oh-my-zsh/custom"
 SYNC_CUSTOM="$HOME/projects/oh-my-zsh-sync/custom"
 
-# Zshrc file paths
+# .zshrc
 ZSHRC_OMZ="$HOME/.zshrc"
-ZSHRC_SYNC="$HOME/projects/oh-my-zsh-sync/.zshrc" # Assuming you want it in a 'zshrc' subdirectory
+ZSHRC_SYNC="$HOME/projects/oh-my-zsh-sync/.zshrc"
 
-# Function to perform the synchronization for directories
+
 sync_dirs() {
   local source="$1"
   local destination="$2"
-
   echo "Syncing directory from '$source' to '$destination'..."
-
-  # Ensure the destination directory exists
   mkdir -p "$destination"
-
-  # Use rsync to synchronize files and directories
   rsync -av --delete --exclude 'themes/' --exclude 'plugins/' "$source/" "$destination/"
-
   echo "Directory synchronization complete."
 }
 
-# Function to perform the synchronization for single files
 sync_file() {
   local source="$1"
   local destination="$2"
-
   echo "Syncing file from '$source' to '$destination'..."
-
-  # Ensure the destination directory exists
   mkdir -p "$(dirname "$destination")"
-
-  # Use rsync to synchronize the file
   rsync -av --delete "$source" "$destination"
-
   echo "File synchronization complete."
 }
 
-# Check for the direction flag
 direction="$1"
 
 case "$direction" in
