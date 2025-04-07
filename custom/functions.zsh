@@ -14,7 +14,6 @@ post() {
   echo "date: "$DATE >> $FILE
   echo "tags: ['Wildcard']" >> $FILE
   echo "---" >> $FILE
-  echo "<!--x-->" >> $FILE
   open . # making no assumptions about what i want to do with it now
 }
 
