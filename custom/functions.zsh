@@ -1,7 +1,7 @@
 # tse 250402
 
 post() {
-  cd /Users/tyleretters/projects/nor.the-rn.info/_posts
+  cd /Users/tyleretters/projects/nor.the-rn.info/src/posts
   TITLE=$1 # "Title With Caps"
   DOWNCASE=$(echo $TITLE | tr '[:upper:]' '[:lower:]')
   HYPHENS=$(echo $DOWNCASE | tr " " "-")
