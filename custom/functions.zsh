@@ -42,7 +42,7 @@ function tidy() {
 }
 
 post() {
-  cd /Users/tyleretters/projects/nor.the-rn.info/_posts
+  cd /Users/tyleretters/projects/nor.the-rn.info/src/posts
   TITLE=$1 # "Title With Caps"
   DOWNCASE=$(echo $TITLE | tr '[:upper:]' '[:lower:]')
   HYPHENS=$(echo $DOWNCASE | tr " " "-")
@@ -55,7 +55,6 @@ post() {
   echo "date: "$DATE >> $FILE
   echo "tags: ['Wildcard']" >> $FILE
   echo "---" >> $FILE
-  echo "<!--x-->" >> $FILE
   open . # making no assumptions about what i want to do with it now
 }
 
