@@ -54,3 +54,7 @@ fi
 # - $ZSH_CUSTOM/aliases.zsh
 # - $ZSH_CUSTOM/macos.zsh
 # For a full list of active aliases, run `alias`.
+
+# Projects
+export CDPATH=".:$HOME/projects"
+alias ni="cd $HOME/projects/nor.the-rn.info"
