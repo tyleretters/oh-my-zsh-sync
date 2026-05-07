@@ -1,5 +1,8 @@
-# tse 251030
+# tse 260507
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 export PATH="${HOMEBREW_PREFIX}/opt/openssl/bin:$PATH"
+export CDPATH=".:$HOME/projects"
 # export PATH="$HOME/.nodenv/bin:$PATH"  # disabled — using nvm instead
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
