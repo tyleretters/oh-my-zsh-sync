@@ -16,7 +16,7 @@ sync_dirs() {
   local destination="$2"
   echo "Syncing directory from '$source' to '$destination'..."
   mkdir -p "$destination"
-  rsync -av --delete --exclude 'themes/' --exclude 'plugins/' "$source/" "$destination/"
+  rsync -av --delete --exclude 'plugins/' "$source/" "$destination/"
   echo "Directory synchronization complete."
 }
 
