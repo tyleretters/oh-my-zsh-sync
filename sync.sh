@@ -10,6 +10,10 @@ SYNC_CUSTOM="$HOME/projects/oh-my-zsh-sync/custom"
 ZSHRC_OMZ="$HOME/.zshrc"
 ZSHRC_SYNC="$HOME/projects/oh-my-zsh-sync/.zshrc"
 
+# git color includes
+GITCOLORS_HOME="$HOME/.gitconfig-colors"
+GITCOLORS_SYNC="$HOME/projects/oh-my-zsh-sync/gitconfig-colors"
+
 
 sync_dirs() {
   local source="$1"
@@ -36,11 +40,13 @@ case "$direction" in
     echo "Syncing to oh-my-zsh and related..."
     sync_dirs "$SYNC_CUSTOM" "$OMZ_CUSTOM"
     sync_file "$ZSHRC_SYNC" "$ZSHRC_OMZ"
+    sync_file "$GITCOLORS_SYNC" "$GITCOLORS_HOME"
     ;;
   "up")
     echo "Syncing to projects directory..."
     sync_dirs "$OMZ_CUSTOM" "$SYNC_CUSTOM"
     sync_file "$ZSHRC_OMZ" "$ZSHRC_SYNC"
+    sync_file "$GITCOLORS_HOME" "$GITCOLORS_SYNC"
     ;;
   "help"|"-h"|"--help"|"")
     echo "Usage: $0 <direction>"
