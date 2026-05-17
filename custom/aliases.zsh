@@ -6,6 +6,7 @@ alias clearTorus="sudo xattr -dr com.apple.quarantine  '/Library/Application Sup
 alias rp="cd ~/projects/revery-prairie"
 
 alias idp="cd ~/projects/shop-item-detail-frontend"
+alias msr="cd ~/projects/shop-marketplace-search-results-frontend"
 alias smw="cd ~/projects/shop-page-web"
 alias monolith="cd ~/projects/monolith"
 alias gql="cd ~/projects/graphql-universe"
@@ -13,3 +14,7 @@ alias box="cd ~/projects/micro-frontend-shopping-box"
 alias hifi="cd ~/projects/hifi"
 alias api="cd ~/projects/shop-page-api"
 alias ni="cd ~/projects/nor.the-rn.info"
+
+alias ca="codeartifact-authenticator && exec zsh"
+
+alias plan='claude --permission-mode plan'

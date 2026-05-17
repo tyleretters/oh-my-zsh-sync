@@ -3,7 +3,7 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="strug"
 zstyle ':omz:update' mode auto
 HIST_STAMPS="yyyy-mm-dd"
-plugins=(1password alias-finder colored-man-pages common-aliases git magic-enter )
+plugins=(1password alias-finder colored-man-pages common-aliases git magic-enter nodenv)
 source $ZSH/oh-my-zsh.sh
 
 # Uncomment the following line to use case-sensitive completion.
@@ -41,3 +41,23 @@ if [[ -n $SSH_CONNECTION ]]; then
 else
   export EDITOR='vi'
 fi
+
+# --- Managed by codeartifact-authenticator (do not edit) ---
+# Source CodeArtifact PIP_INDEX_URL for every shell
+if [ -f "$HOME/.config/discogs/codeartifact-pip-env" ]; then
+    source "$HOME/.config/discogs/codeartifact-pip-env"
+fi
+# Warn if CodeArtifact tokens are stale (>12h) — deferred to first prompt
+_ca_check_stale() {
+    if [ -f "$HOME/.config/discogs/codeartifact-refreshed-at" ]; then
+        local _ca_age=$(( $(date +%s) - $(cat "$HOME/.config/discogs/codeartifact-refreshed-at") ))
+        if [ "$_ca_age" -ge 43200 ]; then
+            printf '\033[33mCodeArtifact token expired — run: codeartifact-authenticator\033[0m\n'
+        fi
+    fi
+    add-zsh-hook -d precmd _ca_check_stale
+    unset -f _ca_check_stale
+}
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd _ca_check_stale
+# --- End codeartifact-authenticator ---

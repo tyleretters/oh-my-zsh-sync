@@ -10,6 +10,11 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 export PATH="/Applications/PACEAntiPiracy/Eden/Fusion/Versions/5/bin:$PATH"
 
+# Trust Cloudflare Zero Trust gateway CA for Node-based tools (wrangler tail, etc.)
+if [ -f "$HOME/.config/discogs/cloudflare-gateway-ca.pem" ]; then
+  export NODE_EXTRA_CA_CERTS="$HOME/.config/discogs/cloudflare-gateway-ca.pem"
+fi
+
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 
