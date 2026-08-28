@@ -51,8 +51,8 @@ case "$direction" in
   "help"|"-h"|"--help"|"")
     echo "Usage: $0 <direction>"
     echo "  where <direction> is one of:"
-    echo "    down : Sync custom files to ~/.oh-my-zsh/custom and .zshrc to ~/projects/zshrc/.zshrc"
-    echo "    up   : Sync custom files to ~/projects/oh-my-zsh-sync/custom and .zshrc to ~/projects/zshrc/.zshrc"
+    echo "    down : repo -> live (custom -> ~/.oh-my-zsh/custom, .zshrc -> ~/.zshrc, gitconfig-colors -> ~/.gitconfig-colors)"
+    echo "    up   : live -> repo (custom -> ~/projects/oh-my-zsh-sync/custom, .zshrc -> ~/projects/oh-my-zsh-sync/.zshrc, gitconfig-colors)"
     echo "    help : Display this help message"
     exit 1
     ;;

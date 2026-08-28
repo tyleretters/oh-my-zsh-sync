@@ -61,3 +61,7 @@ _ca_check_stale() {
 autoload -Uz add-zsh-hook
 add-zsh-hook precmd _ca_check_stale
 # --- End codeartifact-authenticator ---
+
+# GitHub Packages auth for @circular-ruin/* (npm.pkg.github.com)
+# Token lives in a git-ignored secret file (not synced). Needs read:packages, SSO-authorized for the circular-ruin org.
+[ -f "$HOME/.config/github/packages-env" ] && source "$HOME/.config/github/packages-env"
